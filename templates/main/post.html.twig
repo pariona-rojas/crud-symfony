@@ -1,0 +1,49 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <div class="mt-4">
+        {# {{ dump(form.vars.data.id) }} #}
+        <h3> {{form.vars.data.id is null ? 'Create Post':'Update Post'}} </h3>
+        {{form_start(form)}}
+        <div class="form-group">
+            {{form_label(form.parte)}}
+            {{form_widget(form.parte, {'attr':{'class':'form-control'}})}}
+        </div>
+        <div class="form-group">
+            {{form_label(form.delito)}}
+            {{form_widget(form.delito, {'attr':{'class':'form-control'}})}}
+        </div>
+        <div class="form-group">
+            {{form_label(form.fecha)}}
+            {{form_widget(form.fecha, {'attr':{'class':'form-control'}})}}
+        </div>
+        <div class="form-group">
+            {{form_label(form.hora)}}
+            {{form_widget(form.hora, {'attr':{'class':'form-control'}})}}
+        </div>
+        <div class="form-group">
+            {{form_label(form.grupo)}}
+            {{form_widget(form.grupo, {'attr':{'class':'form-control'}})}}
+        </div>
+        <div class="form-group">
+            {{form_label(form.direccion)}}
+            {{form_widget(form.direccion, {'attr':{'class':'form-control'}})}}
+        </div>
+        <div class="form-group">
+            {{form_label(form.zona)}}
+            {{form_widget(form.zona, {'attr':{'class':'form-control'}})}}
+        </div>
+        <div class="form-group">
+            {{form_label(form.efectivo)}}
+            {{form_widget(form.efectivo, {'attr':{'class':'form-control'}})}}
+        </div>
+        <div class="form-group">
+            {{form_label(form.resumen)}}
+            {{form_widget(form.resumen, {'attr':{'class':'form-control'}})}}
+        </div>
+        <button type="submit" class="btn btn-primary mt-2">
+            {{form.vars.data.id is null ? 'Save Post':'Update Post'}}
+        </button>
+        {{form_end(form)}}
+    </div>
+{% endblock body %}
